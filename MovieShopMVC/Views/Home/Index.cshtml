@@ -1,0 +1,22 @@
+﻿@model List<ApplicationCore.Models.MovieCardModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>
+    Top Grossing Movies
+</h2>
+
+@foreach (var movie in Model)   //whenever we pass any data from controller to view, this data will be inside an object called this model.
+                               //Model is built into our ASP.NET Core and will have any data that we're passing.
+{
+    <h3> MoveId: @movie.Id</h3>
+    <h3> MoveId: @movie.Title</h3>
+}
+
+@*<div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+
