@@ -29,6 +29,9 @@ namespace ApplicationCore.Entities
         public ICollection<Trailer> Trailers { get; set; }
         public ICollection<MovieCast> CastsOfMovie { get; set; }
         public ICollection<MovieCrew> CrewsOfMovie { get; set; }
+        public ICollection<Purchase> MoviesOfPurchase { get; set; }
+        public ICollection<Review> ReviewsOfMovie { get; set; }
+
     }
 }
 
