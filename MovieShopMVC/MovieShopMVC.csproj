@@ -18,6 +18,8 @@
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Docker.DotNet" />
+    <None Remove="Views\Movies\" />
+    <None Remove="Views\Cast\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
@@ -26,5 +28,9 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Docker.DotNet" Version="3.125.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Movies\" />
+    <Folder Include="Views\Cast\" />
   </ItemGroup>
 </Project>

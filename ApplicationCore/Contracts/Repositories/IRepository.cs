@@ -1,10 +1,10 @@
 ﻿using System;
 namespace ApplicationCore.Contracts.Repository
 {
-	public interface IRepository<T> where T : class
+	public interface IRepository<T> where T : class //generic repository: T will be replaced by our model entities
 	{
-		// methods: Get
-		T GetById(int id);
+		// basic methods:
+		T GetById(int id); 
 
 		IEnumerable<T> GetAll();
 

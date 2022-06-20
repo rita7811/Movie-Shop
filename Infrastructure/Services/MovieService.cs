@@ -8,26 +8,76 @@ namespace Infrastructure.Services
 	// to make this implementation is binding to a contract
 	public class MovieService : IMovieService
 	{
+		// to call the repository methods (through Dependency Injection)
 		private readonly IMovieRepository _movieRepository;
 
-		public MovieDetailsModel GetMovieDetails(int id)
+		// generate constructor
+        public MovieService(IMovieRepository movieRepository)
         {
+            _movieRepository = movieRepository;
+        }
+
+
+
+        public MovieDetailsModel GetMovieDetails(int id)
+        {
+			// to call Repository
+			var movieDetails = _movieRepository.GetById(id);
+
+			// return model
 			var movie = new MovieDetailsModel
 			{
+				// properties
+				Id = movieDetails.Id,
+				Tagline = movieDetails.Tagline,
+				Title = movieDetails.Title,
+				Price =movieDetails.Price,
+				Overview = movieDetails.Overview,
+				PosterUrl = movieDetails.PosterUrl,
+				BackdropUrl = movieDetails.BackdropUrl,
+				ImdbUrl = movieDetails.ImdbUrl,
+				RunTime = movieDetails.RunTime,
+				TmdbUrl = movieDetails.TmdbUrl,
+                Revenue = movieDetails.Revenue,
+				Budget = movieDetails.Budget,
+                ReleaseDate = movieDetails.ReleaseDate
+            };
 
-			};
+			// Genre:
+            foreach (var genre in movieDetails.GenresOfMovie)
+            {
+				movie.Genres.Add(new GenreModel { Id = genre.GenreId, Name = genre.Genre.Name });
+																		// coming from second include
+				// then, go to MovieDetailModel to create a constructor in order to initialize this collection.
+			}
+
+            // Trailer:
+            foreach (var trailer in movieDetails.Trailers)
+            {
+				movie.Trailers.Add(new TrailerModel { Id = trailer.Id, Name = trailer.Name, TrailerUrl = trailer.TrailerUrl });
+            }
+
+			// Cast:
+			foreach (var cast in movieDetails.CastsOfMovie)
+			{
+				movie.Casts.Add(new CastModel { Id = cast.CastId, Name = cast.Cast.Name, Character = cast.Character, ProfilePath = cast.Cast.ProfilePath });
+			}
 
 			return movie;
         }
 
 
+
+
+
         // Create method that return top movies to the caller
-        // return list of movies
+        // return list of movies (model)  b/c we create models based on the views
         public List<MovieCardModel> GetTopGrossingMovies()
         {
-
+			
 			var movies = _movieRepository.Get30HighestGrossingMovies();
 
+			// convert movies to list of movie into List<MovieCardModel> since return type is different
 			var movieCards = new List<MovieCardModel>();
 
             foreach (var movie in movies)

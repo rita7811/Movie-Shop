@@ -1,5 +1,7 @@
-﻿using ApplicationCore.Contracts.Services;
+﻿using ApplicationCore.Contracts.Repositories;
+using ApplicationCore.Contracts.Services;
 using Infrastructure.Data;
+using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,9 @@ builder.Services.AddControllersWithViews();
 // older .NET Framework DI was not built-in, we had to rely on 3rd part libraries, autofac, ninject
 builder.Services.AddScoped<IMovieService, MovieService>();
 //builder.Services.AddScoped<IMovieService, MovieTestService>();
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<ICastService, CastService>();
 
 
 // Inject the connection string into DbContext options constructor

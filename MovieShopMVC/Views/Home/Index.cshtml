@@ -4,16 +4,42 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h2>
-    Top Grossing Movies
-</h2>
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var movie in Model)
+        {
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+            <!-- Extra large screen: take 2 spaces; Large screen: take 3; Small screen: take 4; default: take 6 -->
 
-@foreach (var movie in Model)   //whenever we pass any data from controller to view, this data will be inside an object called this model.
+                @*call the partial view here*@
+                <partial name="_MovieCard" model="movie" />
+
+            </div>               
+        }
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+@*<h2>
+    Top Grossing Movies
+</h2>*@
+
+@*@foreach (var movie in Model)   //whenever we pass any data from controller to view, this data will be inside an object called this model.
                                //Model is built into our ASP.NET Core and will have any data that we're passing.
 {
     <h3> MoveId: @movie.Id</h3>
     <h3> MoveId: @movie.Title</h3>
-}
+}*@
+
+
 
 @*<div class="text-center">
         <h1 class="display-4">Welcome</h1>

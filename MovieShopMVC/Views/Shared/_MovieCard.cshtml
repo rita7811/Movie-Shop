@@ -1,0 +1,13 @@
+﻿
+@*Movie Card Partial View will be used across multiple views in our application*@
+
+@model ApplicationCore.Models.MovieCardModel
+
+<div class="card mb-4 shadow">
+    @*http://localhost:52342/movies/details/2*@
+    <a asp-controller="Movies" asp-action="Details" asp-route-id="@Model.Id">
+        <img src="@Model.PosterUrl" class="img-fluid" alt="@Model.Title" />
+    </a>
+
+</div>
+

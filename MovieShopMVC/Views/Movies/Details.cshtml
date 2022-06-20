@@ -1,0 +1,200 @@
+﻿
+@model ApplicationCore.Models.MovieDetailsModel
+
+@{
+    ViewData["Title"] = "Movie Details Page";
+}
+
+<div class="container-fluid">
+    <!--1st row -->
+    <div class="row">
+
+        <!--1st column -->
+        <div class="col-4 text-center">
+            <img src="@Model.PosterUrl" class="img-fluid" alt="@Model.Title" width="200" height="400" />
+        </div>
+
+        <!--2nd column -->
+        <div class="col-6">
+            <div class="card-body">
+                <h4 class="card-title">@Model.Title</h4>
+                <p class="card-text"><small class="text-muted">@Model.Tagline</small></p>
+                <p class="card-text-secondary">
+                    @Model.RunTime m | @Model.ReleaseDate.Value.Year   
+                    @foreach (var genre in Model.Genres)
+                    {
+                        <span class="badge rounded-pill bg-secondary">
+                            @genre.Name
+                        </span>
+                    }
+                </p>
+                <p><span class="badge bg-success">@Model.Rating</span></p>
+                <p class="card-text">@Model.Overview</p>
+            </div>
+        </div>
+
+
+        <!--3rd column -->
+        <div class="col-2">
+            <!-- Button trigger modal -->
+            <div class="d-grid">
+                <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
+                    <i class="far fa-edit"></i> REVIEW
+                </button>
+                
+                <button type="button" class="btn btn-block" data-bs-toggle="modal" data-bs-target="#modal2">
+                    Buy $ @Model.Price        
+                </button>
+
+            </div>
+
+
+            <!-- Modal -->
+            <div>
+                <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+                    <div class="modal-dialog bg-white" >
+                        <div class="model-content">
+                            <div class="model-header">
+                                <h5 class="model-title" id="Modal1Label">Review:</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="model-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <div class="dropdown">
+                                            <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownratingButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                                                rate
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownratingButton1">
+                                                <li><a class="dropdown-item" href="#">1</a></li>
+                                                <li><a class="dropdown-item" href="#">2</a></li>
+                                                <li><a class="dropdown-item" href="#">3</a></li>
+                                                <li><a class="dropdown-item" href="#">4</a></li>
+                                                <li><a class="dropdown-item" href="#">5</a></li>
+                                                <li><a class="dropdown-item" href="#">6</a></li>
+                                                <li><a class="dropdown-item" href="#">7</a></li>
+                                                <li><a class="dropdown-item" href="#">8</a></li>
+                                                <li><a class="dropdown-item" href="#">9</a></li>
+                                                <li><a class="dropdown-item" href="#">10</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">Please enter your review:</label>
+                                        <textarea class="form-control" id="message-text"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="model-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div>
+                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+                    <div class="modal-dialog bg-white">
+                        <div>
+                            <div class="model-content">
+                                <div class="model-header">
+                                    <h5 class="model-title" id="Modal1Label">confirmation page</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="model-body">
+                                    <p>Please click Purchase button to confirm your purchase.</p>
+                                </div>
+                                <div class="model-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Purchase</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--2nd row -->
+    <div class="row">
+        <!--1st column -->
+        <div class="col-4">
+            <div class="row">
+                <h5>MOVIE FACTS</h5>
+                <hr />
+                <ul class="list-group list-group-flush">
+                    </span>
+                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-calendar"></i> Release Date <span class="badge rounded-pill bg-secondary">@Model.ReleaseDate.Value.Year </span></li>
+                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-hourglass-half"></i> Run Time <span class="badge rounded-pill bg-secondary">@Model.RunTime m</span></li>
+                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-money-bill-alt"></i> Bos Office <span class="badge rounded-pill bg-secondary">@Model.Revenue</span></li>
+                    <li class="list-group-item"><i style="font-size: 12px" class="material-icons">&#xe227 </i> Budget <span class="badge rounded-pill bg-secondary">@Model.Budget</span></li>
+                    <li class="list-group-item">
+                        <i style="font-size: 12px" class="fa fa-imdb">&#xf2d8; </i> <i style="font-size: 12px" class="fa fa-share-square-o">&#xf045;</i>
+                    </li>
+                </ul>
+
+                <h5>TRAILERS</h5>
+                <hr />
+                @foreach (var trailer in Model.Trailers)
+                {
+                    <ul class="list-group list-group-flush">
+    
+                        <li class="list-group-item">
+                        <i style="font-size: 12px" class="fa fa-youtube-play">&#xf16a; </i><a href="@trailer.TrailerUrl" class="text-decoration-none" target="_blank"> @trailer.Name</a>
+                        </li>
+
+                    </ul>
+                }
+            </div>
+        </div>
+
+        <!--2nd column -->
+        <div class="col-8">
+
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h5>Cast</h5>
+
+
+                        @foreach (var cast in Model.Casts)
+                        {
+                            <hr />
+
+                            @*call the partial view here*@
+                            @*<partial name="_CastCard" model="cast" />*@
+
+                            <a asp-controller="cast" asp-action="details" asp-route-id="@cast.Id" class="text-decoration-none">
+
+                                <div class="row">
+                                    @*http://localhost:52342/cast/details/2*@
+
+                                    <div class="col-4">
+                                        <img src="@cast.ProfilePath" class="rounded-circle" alt="@cast.Name" width="30" height="38" />
+                                        
+                                    </div>
+                                    <div class="col-4">
+                                        <h6>@cast.Name</h6>
+                                    </div>
+                                    <div class="col-4">
+                                        <h6>@cast.Character</h6>
+                                    </div>
+                                </div>
+                            </a>
+                         }
+
+                    </li>
+                </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+

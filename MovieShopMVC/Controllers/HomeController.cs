@@ -34,7 +34,9 @@ public class HomeController : Controller
         // newing up -> avoid use it -> refactor this code
         //var movieService = new MovieService();
         //var movies = movieService.GetTopGrossingMovies();
+
         var movies = _movieService.GetTopGrossingMovies();
+
         // method(int x, IMovieService service);
 
         // var movieService = new MovieService();
