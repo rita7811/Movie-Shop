@@ -4,15 +4,15 @@ namespace ApplicationCore.Contracts.Repository
 	public interface IRepository<T> where T : class //generic repository: T will be replaced by our model entities
 	{
 		// basic methods:
-		T GetById(int id); 
+		Task<T> GetById(int id);
 
-		IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAll();
 
-		T Add(T entity);
+        Task<T> Add(T entity);
 
-		T Update(T entity);
+        Task<T> Update(T entity);
 
-		T Delete(T entity);
+        Task<T> Delete(T entity);
 	}
 }
 

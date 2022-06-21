@@ -19,10 +19,11 @@ namespace Infrastructure.Services
 
 
 
-        public MovieDetailsModel GetMovieDetails(int id)
+        public async Task<MovieDetailsModel> GetMovieDetails(int id)
         {
-			// to call Repository
-			var movieDetails = _movieRepository.GetById(id);
+            // to call Repository
+            var movieDetails = await _movieRepository.GetById(id);
+            //var movieDetails = _movieRepository.GetById(id);
 
 			// return model
 			var movie = new MovieDetailsModel
@@ -63,7 +64,13 @@ namespace Infrastructure.Services
 				movie.Casts.Add(new CastModel { Id = cast.CastId, Name = cast.Cast.Name, Character = cast.Character, ProfilePath = cast.Cast.ProfilePath });
 			}
 
-			return movie;
+            // Review:
+            foreach (var review in movieDetails.ReviewsOfMovie)
+            {
+                movie.Reviews.Add(new ReviewModel { MovieId = review.MovieId, Rating = review.Rating });
+            }
+
+            return movie;
         }
 
 
@@ -72,13 +79,14 @@ namespace Infrastructure.Services
 
         // Create method that return top movies to the caller
         // return list of movies (model)  b/c we create models based on the views
-        public List<MovieCardModel> GetTopGrossingMovies()
+        public async Task<List<MovieCardModel>> GetTopGrossingMovies()
         {
 			
-			var movies = _movieRepository.Get30HighestGrossingMovies();
+			var movies = await _movieRepository.Get30HighestGrossingMovies();
+            //var movies = _movieRepository.Get30HighestGrossingMovies();
 
-			// convert movies to list of movie into List<MovieCardModel> since return type is different
-			var movieCards = new List<MovieCardModel>();
+            // convert movies to list of movie into List<MovieCardModel> since return type is different
+            var movieCards = new List<MovieCardModel>();
 
             foreach (var movie in movies)
             {

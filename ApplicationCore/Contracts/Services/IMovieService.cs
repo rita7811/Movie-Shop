@@ -11,10 +11,10 @@ namespace ApplicationCore.Contracts.Services
 
 
 
-		List<MovieCardModel> GetTopGrossingMovies();
+		Task<List<MovieCardModel>> GetTopGrossingMovies();
 
 		// get movie details method
-		MovieDetailsModel GetMovieDetails(int id);
+		Task<MovieDetailsModel> GetMovieDetails(int id);
 
 
 	}

@@ -20,6 +20,8 @@
     <None Remove="Docker.DotNet" />
     <None Remove="Views\Movies\" />
     <None Remove="Views\Cast\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\Genres\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
@@ -32,5 +34,7 @@
   <ItemGroup>
     <Folder Include="Views\Movies\" />
     <Folder Include="Views\Cast\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Genres\" />
   </ItemGroup>
 </Project>

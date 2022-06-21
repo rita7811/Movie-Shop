@@ -25,7 +25,7 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
         // display our home page
         // top 30 movies -> Movie Service
@@ -35,7 +35,7 @@ public class HomeController : Controller
         //var movieService = new MovieService();
         //var movies = movieService.GetTopGrossingMovies();
 
-        var movies = _movieService.GetTopGrossingMovies();
+        var movies = await _movieService.GetTopGrossingMovies();
 
         // method(int x, IMovieService service);
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using ApplicationCore.Contracts.Repository;
 using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
@@ -17,32 +18,67 @@ namespace Infrastructure.Repositories
         }
 
 
-        public T Add(T entity)
+        public Task<T> Add(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public T Delete(T entity)
+        public Task<T> Delete(T entity)
         {
             throw new NotImplementedException();
         }
 
-        // make it virtual to allow us have option of overriding
-        public virtual IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
+        {
+
+            // to get all the records from the table
+            // we can use this method for getting all the list of Genres
+
+            return await _dbContext.Set<T>().ToListAsync();
+        }
+
+        public virtual Task<T> GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        // make it virtual to allow us have option of overriding
-        public virtual T GetById(int id)
+        public Task<T> Update(T entity)
         {
             throw new NotImplementedException();
         }
 
-        public T Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
+
+
+
+
+
+
+        //public T Add(T entity)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public T Delete(T entity)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //// make it virtual to allow us have option of overriding
+        //public virtual IEnumerable<T> GetAll()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //// make it virtual to allow us have option of overriding
+        //public virtual T GetById(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public T Update(T entity)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
 

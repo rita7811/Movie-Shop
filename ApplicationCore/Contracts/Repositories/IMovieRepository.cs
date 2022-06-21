@@ -12,9 +12,9 @@ namespace ApplicationCore.Contracts.Repositories
 
 		// some common methods...like GetById(int id);
 
-		IEnumerable<Movie> Get30HighestGrossingMovies();
-		IEnumerable<Movie> Get30HighestRatedMovies();
-
+		Task<IEnumerable<Movie>> Get30HighestGrossingMovies();
+		Task<IEnumerable<Movie>> Get30HighestRatedMovies();
+        //Task<IEnumerable<Movie>> GetAverage();
 	}
 }
 

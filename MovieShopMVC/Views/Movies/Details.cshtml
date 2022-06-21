@@ -28,7 +28,13 @@
                         </span>
                     }
                 </p>
-                <p><span class="badge bg-success">@Model.Rating</span></p>
+                @*<p>
+                    @foreach (var review in Model.Reviews)
+                    {
+                        <span class="badge bg-success"> @review.Rating </span>
+                    }
+
+                </p>*@
                 <p class="card-text">@Model.Overview</p>
             </div>
         </div>
@@ -42,7 +48,7 @@
                     <i class="far fa-edit"></i> REVIEW
                 </button>
                 
-                <button type="button" class="btn btn-block" data-bs-toggle="modal" data-bs-target="#modal2">
+                <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal2">
                     Buy $ @Model.Price        
                 </button>
 
@@ -53,16 +59,16 @@
             <div>
                 <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
                     <div class="modal-dialog bg-white" >
-                        <div class="model-content">
-                            <div class="model-header">
-                                <h5 class="model-title" id="Modal1Label">Review:</h5>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal1Label">Review:</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="model-body">
+                            <div class="modal-body">
                                 <form>
                                     <div class="mb-3">
                                         <div class="dropdown">
-                                            <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownratingButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                                            <a class="btn btn-secondary dropdown-toggle" id="dropdownratingButton1" data-bs-toggle="dropdown">
                                                 rate
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownratingButton1">
@@ -85,7 +91,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="model-footer">
+                            <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary">Submit</button>
                             </div>
@@ -99,15 +105,15 @@
                 <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
                     <div class="modal-dialog bg-white">
                         <div>
-                            <div class="model-content">
-                                <div class="model-header">
-                                    <h5 class="model-title" id="Modal1Label">confirmation page</h5>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="Modal1Label">Confirmation Page</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="model-body">
+                                <div class="modal-body">
                                     <p>Please click Purchase button to confirm your purchase.</p>
                                 </div>
-                                <div class="model-footer">
+                                <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-primary">Purchase</button>
                                 </div>
@@ -128,13 +134,13 @@
                 <h5>MOVIE FACTS</h5>
                 <hr />
                 <ul class="list-group list-group-flush">
-                    </span>
-                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-calendar"></i> Release Date <span class="badge rounded-pill bg-secondary">@Model.ReleaseDate.Value.Year </span></li>
-                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-hourglass-half"></i> Run Time <span class="badge rounded-pill bg-secondary">@Model.RunTime m</span></li>
-                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-money-bill-alt"></i> Bos Office <span class="badge rounded-pill bg-secondary">@Model.Revenue</span></li>
-                    <li class="list-group-item"><i style="font-size: 12px" class="material-icons">&#xe227 </i> Budget <span class="badge rounded-pill bg-secondary">@Model.Budget</span></li>
+                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-calendar"></i> Release Date <span class="badge rounded-pill bg-secondary"> @Model.ReleaseDate.Value.ToString("MMM dd, yyyy") </span></li>
+                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-hourglass-half"></i> Run Time <span class="badge rounded-pill bg-secondary"> @Model.RunTime m </span></li>
+                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-money-bill-alt"></i> Bos Office <span class="badge rounded-pill bg-secondary">  @String.Format("{0:C2}", Model.Revenue) </span></li>
+                    <li class="list-group-item"><i style="font-size: 16px" class="material-icons">&#xe227 </i> Budget <span class="badge rounded-pill bg-secondary"> @String.Format("{0:C2}", Model.Budget) </span></li>
                     <li class="list-group-item">
-                        <i style="font-size: 12px" class="fa fa-imdb">&#xf2d8; </i> <i style="font-size: 12px" class="fa fa-share-square-o">&#xf045;</i>
+                        <a class="text-decoration-none text-dark" href="@Model.TmdbUrl" target="_blank text-dark"> <i style="font-size: 16px" class="fab fa-imdb"> &nbsp; </i> </a>
+                        <a class="text-decoration-none text-dark" href="#"> <i style="font-size: 16px" class="fas fa-share-square"> </i></a>
                     </li>
                 </ul>
 
@@ -145,7 +151,12 @@
                     <ul class="list-group list-group-flush">
     
                         <li class="list-group-item">
-                        <i style="font-size: 12px" class="fa fa-youtube-play">&#xf16a; </i><a href="@trailer.TrailerUrl" class="text-decoration-none" target="_blank"> @trailer.Name</a>
+                            <a href="@trailer.TrailerUrl" class="text-decoration-none text-dark" target="_blank text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                                </svg>
+                                @trailer.Name
+                            </a>
                         </li>
 
                     </ul>
@@ -169,14 +180,14 @@
                             @*call the partial view here*@
                             @*<partial name="_CastCard" model="cast" />*@
 
-                            <a asp-controller="cast" asp-action="details" asp-route-id="@cast.Id" class="text-decoration-none">
+
+                            @*http://localhost:52342/cast/details/2*@
+                            <a asp-controller="cast" asp-action="details" asp-route-id="@cast.Id" class="text-decoration-none text-dark">
 
                                 <div class="row">
-                                    @*http://localhost:52342/cast/details/2*@
-
                                     <div class="col-4">
                                         <img src="@cast.ProfilePath" class="rounded-circle" alt="@cast.Name" width="30" height="38" />
-                                        
+
                                     </div>
                                     <div class="col-4">
                                         <h6>@cast.Name</h6>
@@ -186,7 +197,7 @@
                                     </div>
                                 </div>
                             </a>
-                         }
+                        }
 
                     </li>
                 </ul>

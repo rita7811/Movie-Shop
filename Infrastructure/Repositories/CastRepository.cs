@@ -18,13 +18,13 @@ namespace Infrastructure.Repositories
         // Override GetById(int id) method in CastRepository class that will return Movies belonging to the cast including cast details
         // method for Cast detials page
         // override our basic methods
-        public override Cast GetById(int id)
+        public override async Task<Cast> GetById(int id)
         {
             // include(join) lots of information
             // SELECT * FROM Cast JOIN MocieCast JOIN Movie where id = id 
-            var CastDetail = _dbContext.Casts
+            var CastDetail = await _dbContext.Casts
                 .Include(m => m.MoviesOfCast).ThenInclude(m => m.Movie)
-                .FirstOrDefault(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             return CastDetail;
 
         }
