@@ -7,10 +7,8 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/appsettings.json">
     <Files>
-      <File FileName="MovieShopMVC/appsettings.json" Line="12" Column="5" />
+      <File FileName="MovieShopMVC/appsettings.json" Line="13" Column="22" />
       <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="288" Column="1" />
-      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="147" Column="34" />
-      <File FileName="MovieShopMVC/Views/Shared/_Layout.cshtml" Line="11" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -40,7 +38,6 @@
                   </Node>
                 </Node>
               </Node>
-              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
