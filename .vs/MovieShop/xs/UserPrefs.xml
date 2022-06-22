@@ -1,14 +1,13 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{FCD0A2B1-8173-4E0D-848E-3572F519544C}|Default">
+﻿<Properties StartupConfiguration="{FCD0A2B1-8173-4E0D-848E-3572F519544C}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/appsettings.json">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Views/Movies/Details.cshtml">
     <Files>
-      <File FileName="MovieShopMVC/appsettings.json" Line="13" Column="22" />
+      <File FileName="MovieShopMVC/appsettings.json" Line="6" Column="5" />
       <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="288" Column="1" />
+      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="32" Column="104" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -47,5 +46,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Safari.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
