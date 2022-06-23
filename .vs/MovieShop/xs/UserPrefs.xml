@@ -1,20 +1,37 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{FCD0A2B1-8173-4E0D-848E-3572F519544C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Controllers/AccountController.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Controllers/AccountController.cs" relfile="MovieShopMVC/Controllers/AccountController.cs" line="23" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Controllers/AccountController.cs" relfile="MovieShopMVC/Controllers/AccountController.cs" line="30" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Web Applications/MovieShop/ClassNote.txt">
     <Files>
-      <File FileName="MovieShopMVC/appsettings.json" Line="16" Column="1" />
-      <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="403" Column="1" />
-      <File FileName="MovieShopMVC/Controllers/AccountController.cs" Line="11" Column="10" />
+      <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="398" Column="7" />
+      <File FileName="MovieShopMVC/Controllers/AccountController.cs" Line="29" Column="156" />
       <File FileName="ApplicationCore/Models/UserRegisterModel.cs" Line="11" Column="6" />
+      <File FileName="ApplicationCore/Models/UserLoginModel.cs" Line="12" Column="1" />
+      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="143" Column="34" />
+      <File FileName="MovieShopMVC/Views/Account/Register.cshtml" Line="54" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MovieShop" expanded="True">
             <Node name="Solution Items" expanded="True" />
-            <Node name="ApplicationCore" expanded="True" />
+            <Node name="ApplicationCore" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
             <Node name="MovieShopMVC" expanded="True">
+              <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True">
+                  <Node name="Register.cshtml" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -24,11 +41,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

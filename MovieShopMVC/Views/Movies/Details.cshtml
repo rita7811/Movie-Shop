@@ -27,9 +27,13 @@
                             @genre.Name
                         </span>
                     }
-                </p>
+                </p> 
                 <p>
                     <span class="badge bg-success"> @Model.Reviews.Average(x => x.Rating).ToString("0.0") </span>
+                    @*@foreach (var review in Model.Reviews)
+                    {
+                        <span class="badge bg-success"> </span>
+                    }*@
                 </p>
                 <p class="card-text">@Model.Overview</p>
             </div>

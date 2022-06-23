@@ -37,25 +37,6 @@ namespace Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        //public async Task<IEnumerable<Movie>> GetAverage()
-        //{
-        //    var movieDetails = await _dbContext.Movies.Select( a => new movieDetails { IDbContextFa})
-        //        .Include(m => m.GenresOfMovie).ThenInclude(m => m.Genre)
-        //        .Include(m => m.Trailers)
-        //        .Include(m => m.CastsOfMovie).ThenInclude(m => m.Cast)
-        //        .Include(m => m.ReviewsOfMovie)
-        //        .Where()
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-
-        //    return movieDetails;
-
-        //    var genres = await _genreRepository.GetAll();
-
-        //    var genresModel = genres.Select(g => new GenreModel { Id = g.Id, Name = g.Name });
-        //    return genresModel;
-
-        //}
-
 
         // method for movie detials page
         // override our basic methods

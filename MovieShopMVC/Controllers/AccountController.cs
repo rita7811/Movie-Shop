@@ -12,8 +12,8 @@ namespace MovieShopMVC.Controllers
 			return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Login(UserLoginModel model)  //create object "UserLoginModel"
+        [HttpPost]
+        public async Task<IActionResult> Login(UserLoginModel model)  //create object in "UserLoginModel" for (string email, string password)
         {
             return View();
         }
@@ -25,8 +25,8 @@ namespace MovieShopMVC.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Register(UserRegisterModel model)  //create object "UserRegisterModel"
+        [HttpPost]
+        public async Task<IActionResult> Register(UserRegisterModel model)  //create object in "UserRegisterModel" for (string email, string password......)
         {
             // *****Model Binding
             return View();

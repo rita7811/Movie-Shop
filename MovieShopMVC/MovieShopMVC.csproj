@@ -22,7 +22,6 @@
     <None Remove="Views\Cast\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Genres\" />
-    <None Remove="Views\Account\" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +38,5 @@
     <Folder Include="Views\Cast\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Genres\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
 </Project>
