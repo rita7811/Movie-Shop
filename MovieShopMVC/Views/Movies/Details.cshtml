@@ -41,7 +41,7 @@
             <!-- Button trigger modal -->
             <div class="d-grid">
                 <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
-                    <i class="far fa-edit"></i> REVIEW
+                    <i class="far fa-edit" aria-hidden="true"></i> REVIEW
                 </button>
                 
                 <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal2">
@@ -132,11 +132,11 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><i style="font-size: 12px" class="fa fa-calendar"></i> Release Date <span class="badge rounded-pill bg-secondary"> @Model.ReleaseDate.Value.ToString("MMM dd, yyyy") </span></li>
                     <li class="list-group-item"><i style="font-size: 12px" class="fa fa-hourglass-half"></i> Run Time <span class="badge rounded-pill bg-secondary"> @Model.RunTime m </span></li>
-                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-money-bill-alt"></i> Bos Office <span class="badge rounded-pill bg-secondary">  @String.Format("{0:C2}", Model.Revenue) </span></li>
+                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-money-bill-alt" aria-hidden="true"></i> Bos Office <span class="badge rounded-pill bg-secondary">  @String.Format("{0:C2}", Model.Revenue) </span></li>
                     <li class="list-group-item"><i style="font-size: 16px" class="material-icons">&#xe227 </i> Budget <span class="badge rounded-pill bg-secondary"> @String.Format("{0:C2}", Model.Budget) </span></li>
                     <li class="list-group-item">
-                        <a class="text-decoration-none text-dark" href="@Model.TmdbUrl" target="_blank text-dark"> <i style="font-size: 16px" class="fab fa-imdb"> &nbsp; </i> </a>
-                        <a class="text-decoration-none text-dark" href="#"> <i style="font-size: 16px" class="fas fa-share-square"> </i></a>
+                        <a class="text-decoration-none text-dark" href="@Model.TmdbUrl" target="_blank text-dark"> <i style="font-size: 16px" class="fab fa-imdb" aria-hidden="true"> &nbsp; </i> </a>
+                        <a class="text-decoration-none text-dark" href="#"> <i style="font-size: 16px" class="fas fa-share-square" aria-hidden="true"> </i></a>
                     </li>
                 </ul>
 

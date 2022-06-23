@@ -1,42 +1,20 @@
-﻿<Properties StartupConfiguration="{FCD0A2B1-8173-4E0D-848E-3572F519544C}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Views/Movies/Details.cshtml">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{FCD0A2B1-8173-4E0D-848E-3572F519544C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Controllers/AccountController.cs">
     <Files>
-      <File FileName="MovieShopMVC/appsettings.json" Line="6" Column="5" />
-      <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="288" Column="1" />
-      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="32" Column="104" />
+      <File FileName="MovieShopMVC/appsettings.json" Line="16" Column="1" />
+      <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="403" Column="1" />
+      <File FileName="MovieShopMVC/Controllers/AccountController.cs" Line="11" Column="10" />
+      <File FileName="ApplicationCore/Models/UserRegisterModel.cs" Line="11" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MovieShop" expanded="True">
             <Node name="Solution Items" expanded="True" />
-            <Node name="ApplicationCore" expanded="True">
-              <Node name="Contracts" expanded="True">
-                <Node name="Repositories" expanded="True" />
-                <Node name="Services" expanded="True" />
-              </Node>
-              <Node name="Entities" expanded="True" />
-              <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="Infrastructure" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True" />
-            </Node>
+            <Node name="ApplicationCore" expanded="True" />
             <Node name="MovieShopMVC" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Movies" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="Components" expanded="True">
-                    <Node name="Genres" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
+              <Node name="Views" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -46,7 +24,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
