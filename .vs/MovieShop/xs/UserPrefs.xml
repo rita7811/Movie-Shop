@@ -1,18 +1,21 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{FCD0A2B1-8173-4E0D-848E-3572F519544C}|Default">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Controllers/AccountController.cs" relfile="MovieShopMVC/Controllers/AccountController.cs" line="23" column="1" />
-      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Controllers/AccountController.cs" relfile="MovieShopMVC/Controllers/AccountController.cs" line="30" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Web Applications/MovieShop/ClassNote.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="398" Column="7" />
-      <File FileName="MovieShopMVC/Controllers/AccountController.cs" Line="29" Column="156" />
-      <File FileName="ApplicationCore/Models/UserRegisterModel.cs" Line="11" Column="6" />
-      <File FileName="ApplicationCore/Models/UserLoginModel.cs" Line="12" Column="1" />
-      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="143" Column="34" />
-      <File FileName="MovieShopMVC/Views/Account/Register.cshtml" Line="54" Column="1" />
+      <File FileName="../../../../Web Applications/MovieShop/ClassNote.txt" Line="439" Column="71" />
+      <File FileName="../../../../C#/ConsoleApp5/ConsoleApp5/ManageEmployee.cs" Line="292" Column="1" />
+      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="150" Column="141" />
+      <File FileName="MovieShopMVC/Controllers/AccountController.cs" Line="67" Column="27" />
+      <File FileName="ApplicationCore/Contracts/Services/IAccountService.cs" Line="11" Column="6" />
+      <File FileName="Infrastructure/Services/AccountService.cs" Line="53" Column="1" />
+      <File FileName="ApplicationCore/Contracts/Repositories/IUserRepository.cs" Line="15" Column="1" />
+      <File FileName="Infrastructure/Repositories/UserRepository.cs" Line="23" Column="12" />
+      <File FileName="MovieShopMVC/Program.cs" Line="22" Column="63" />
+      <File FileName="ApplicationCore/Models/MovieDetailsModel.cs" Line="21" Column="47" />
+      <File FileName="MovieShopMVC/Views/Shared/_Layout.cshtml.css" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Views/Shared/_Layout.cshtml" Line="14" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,16 +24,25 @@
             <Node name="Solution Items" expanded="True" />
             <Node name="ApplicationCore" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="Contracts" expanded="True">
+                <Node name="Repositories" expanded="True" />
+                <Node name="Services" expanded="True" />
+              </Node>
+              <Node name="Entities" expanded="True" />
               <Node name="Models" expanded="True" />
             </Node>
+            <Node name="Infrastructure" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
             <Node name="MovieShopMVC" expanded="True">
-              <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True">
-                  <Node name="Register.cshtml" selected="True" />
+                <Node name="Movies" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" expanded="True" />
                 </Node>
-                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>

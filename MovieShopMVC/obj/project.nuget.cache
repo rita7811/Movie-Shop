@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9teJux4I9klqyIvThPBdSNOrR9jzDJtbVw5mtlLM9+hOtdluaFPE+9uhNxSrloQc3V2k7hsfowT7AyV8rTNACQ==",
+  "dgSpecHash": "H1RbB26tjNz9K1ed9ort51zoA+D0qIFvpdPfQl6xNkOeuRCbIk48NQRl9fFlSxvgotc1yPAZIbCMXlButbgo9A==",
   "success": true,
   "projectFilePath": "/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/MovieShopMVC.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "/Users/rita/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/Users/rita/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",
     "/Users/rita/.nuget/packages/messagepackanalyzer/2.1.152/messagepackanalyzer.2.1.152.nupkg.sha512",
+    "/Users/rita/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.6/microsoft.aspnetcore.cryptography.internal.6.0.6.nupkg.sha512",
+    "/Users/rita/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.6/microsoft.aspnetcore.cryptography.keyderivation.6.0.6.nupkg.sha512",
     "/Users/rita/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.0/microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "/Users/rita/.nuget/packages/microsoft.bcl.asyncinterfaces/5.0.0/microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "/Users/rita/.nuget/packages/microsoft.build/17.0.0/microsoft.build.17.0.0.nupkg.sha512",

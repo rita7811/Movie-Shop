@@ -18,9 +18,14 @@ namespace Infrastructure.Repositories
         }
 
 
-        public Task<T> Add(T entity)
+        public async Task<T> Add(T entity)
         {
-            throw new NotImplementedException();
+            // to save anything
+
+            _dbContext.Set<T>().Add(entity); //Add() method: add var new User entity to user db set (add them to memory)
+            await _dbContext.SaveChangesAsync(); //***SaveChangesAsync() method: actually to call the database and save them
+
+            return entity;
         }
 
         public Task<T> Delete(T entity)

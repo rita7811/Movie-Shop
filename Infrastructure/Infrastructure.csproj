@@ -13,6 +13,8 @@
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Data\" />
     <None Remove="Docker.DotNet" />
+    <None Remove="Microsoft.AspNetCore.Cryptography.KeyDerivation" />
+    <None Remove="System.Security.Cryptography.Cng" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -29,5 +31,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Docker.DotNet" Version="3.125.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="6.0.6" />
+    <PackageReference Include="System.Security.Cryptography.Cng" Version="5.0.0" />
   </ItemGroup>
 </Project>
