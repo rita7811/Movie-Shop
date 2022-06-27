@@ -10,13 +10,15 @@ namespace ApplicationCore.Contracts.Services
 		// MovieModel GetMovieDetails(int movieId)  --return type will be model
 
 
-
 		Task<List<MovieCardModel>> GetTopGrossingMovies();
 
 		// get movie details method
 		Task<MovieDetailsModel> GetMovieDetails(int id);
 
+		// get movies by Genres
+		Task<PagedResultSetModel<MovieCardModel>> GetMoviesByGenre(int id, int pageSize = 30, int pageNumber = 1);
 
-	}
+
+    }
 }
 

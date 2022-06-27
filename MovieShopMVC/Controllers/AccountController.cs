@@ -36,12 +36,15 @@ namespace MovieShopMVC.Controllers
             var user = await _accountService.ValidateUser(model.Email, model.Password);
 
             // return HomePage:
-            if (user != null)   // if user is Valid for his Password
+            if (user != null)   // if user is Valid for his Password => loged in successfully
             {
-                
+                // 1. create a cookie, cookie are always sent from browser automatically to server
+                // 2. Inside the Cookie, we store encrypted information(***User claims) that Server can recognize and tell whether user is loged in or not
+                // 3. Cookie should have an expration time : like 2 hrs
+
                 // create Cookie:
 
-                // 1. create Claim
+                // 1. create Claims
                 var claims = new List<Claim>  // Claim already in our ASP.NET
                 {
                     // these information will be stored inside the cookie
@@ -69,8 +72,8 @@ namespace MovieShopMVC.Controllers
                 // ***Principal object which is used by ASP.NET to recognize the USER
                 // Create the Cookie with above information
 
-                // *****HttpContext object => Encapsualtes your Http Request information
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+                // *****HttpContext class => Encapsualtes your Http Request information
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity)); //sign In
 
 
                 // redirect to home page
@@ -102,6 +105,16 @@ namespace MovieShopMVC.Controllers
             // redirect to Login page
             return RedirectToAction("Login");
         }
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(); //sign Out
+            return RedirectToAction("Login");
+        }
+
     }
 }
 

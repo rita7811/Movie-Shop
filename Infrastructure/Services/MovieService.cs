@@ -67,10 +67,32 @@ namespace Infrastructure.Services
             // Review:
             foreach (var review in movieDetails.ReviewsOfMovie)
             {
-                movie.Reviews.Add(new ReviewModel { MovieId = review.MovieId, Rating = review.Rating });
+                movie.Reviews.Add(new ReviewModel { MovieId = review.MovieId, Rating = review.Rating, ReviewText = review.ReviewText });
             }
 
+            //// Purchase:
+            //foreach (var purchase in movieDetails.MoviesOfPurchase)
+            //{
+            //    movie.Purchases.Add(new PurchaseModel { UserId = purchase.UserId, MovieId = purchase.MovieId, TotalPrice = purchase.TotalPrice, PurchaseDateTime = purchase.PurchaseDateTime, PurchaseNumber = purchase.PurchaseNumber });
+            //}
+
             return movie;
+        }
+
+
+        public async Task<PagedResultSetModel<MovieCardModel>> GetMoviesByGenre(int genreId, int pageSize = 30, int pageNumber = 1)
+        {
+			// to call method in MovieRepository
+			var movies = await _movieRepository.GetMoviesByGenre(genreId, pageSize, pageNumber);
+
+			// return Task<List<MovieCardModel>>
+			var movieCards = new List<MovieCardModel>();
+
+            foreach (var movie in movies.PagedData)
+            {
+				movieCards.Add(new MovieCardModel { Id = movie.Id, PosterUrl = movie.PosterUrl, Title = movie.Title });
+            }
+			return new PagedResultSetModel<MovieCardModel>(pageNumber, movies.TotalRecoeds, pageSize, movieCards);
         }
 
 

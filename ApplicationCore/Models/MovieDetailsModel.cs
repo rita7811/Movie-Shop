@@ -12,6 +12,7 @@ namespace ApplicationCore.Models
             Casts = new List<CastModel>();
             Trailers = new List<TrailerModel>();
             Reviews = new List<ReviewModel>();
+            //Purchases = new List<PurchaseModel>();
         }
 
 
@@ -38,7 +39,7 @@ namespace ApplicationCore.Models
         public List<CastModel> Casts { get; set; }
         public List<TrailerModel> Trailers { get; set; }
         public List<ReviewModel> Reviews { get; set; }
-
+        //public List<PurchaseModel> Purchases { get; set; }
     }
 }
 

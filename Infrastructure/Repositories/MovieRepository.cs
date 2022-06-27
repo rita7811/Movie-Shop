@@ -1,6 +1,7 @@
 ﻿using System;
 using ApplicationCore.Contracts.Repositories;
 using ApplicationCore.Entities;
+using ApplicationCore.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,9 +52,9 @@ namespace Infrastructure.Repositories
                 .Include(m => m.Trailers)
                 .Include(m => m.CastsOfMovie).ThenInclude(m => m.Cast)
                 .Include(m => m.ReviewsOfMovie)
+                //.Include(m => m.MoviesOfPurchase)
                 .FirstOrDefaultAsync(m => m.Id == id);
             return movieDetails;
-
 
 
             //var movieDetails = _dbContext.Movies
@@ -64,7 +65,27 @@ namespace Infrastructure.Repositories
             //return movieDetails;
         }
 
-            
+
+        public async Task<PagedResultSetModel<Movie>> GetMoviesByGenre(int genreId, int pageSize = 30, int pageNumber = 1)
+        {
+            // go to movieGenre table included movies and make sure we get pagination only certain records
+
+            // 1. get total count movies for the genre
+            var totalMoviesForGenre = await _dbContext.MovieGenres.Where(g => g.GenreId == genreId).CountAsync();
+
+            // 2. get pagination only certain records
+            var movies = await _dbContext.MovieGenres
+                .Where(g => g.GenreId == genreId)
+                .Include(g => g.Movie)
+                .OrderByDescending(m => m.Movie.Revenue)
+                .Select(m => new Movie { Id = m.MovieId, PosterUrl = m.Movie.PosterUrl, Title = m.Movie.Title })
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize).ToListAsync();
+
+            // take movies and put it into PagedResultSetModel
+            var pagedMovies = new PagedResultSetModel<Movie>(pageNumber, totalMoviesForGenre, pageSize, movies);
+            return pagedMovies;
+        }
 
 
     }

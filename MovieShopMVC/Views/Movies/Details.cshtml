@@ -50,8 +50,13 @@
 
         <!--3rd column -->
         <div class="col-2">
+
+            @*Login and Register buttons*@
+            @*create partial view*@
+            <partial name="_Purchase" />
+
             <!-- Button trigger modal -->
-            <div class="d-grid">
+            <!--<div class="d-grid">
                 <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
                     <i class="far fa-edit" aria-hidden="true"></i> REVIEW
                 </button>
@@ -60,11 +65,11 @@
                     Buy $ @Model.Price        
                 </button>
 
-            </div>
+            </div>-->
 
 
             <!-- Modal -->
-            <div>
+            <!--<div>
                 <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
                     <div class="modal-dialog bg-white" >
                         <div class="modal-content">
@@ -106,10 +111,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <!-- Modal -->
-            <div>
+            <!--<div>
                 <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
                     <div class="modal-dialog bg-white">
                         <div>
@@ -123,13 +128,13 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Purchase</button>
+                                    <input type="submit" value="Purchase" class="btn btn-primary" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 

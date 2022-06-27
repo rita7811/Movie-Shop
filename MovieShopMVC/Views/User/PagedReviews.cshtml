@@ -1,0 +1,50 @@
+﻿
+@model ApplicationCore.Models.PagedResultSetModel<ApplicationCore.Models.ReviewCardModel>
+
+<div class="rounded">
+    <div class="container bg-light">
+        @foreach (var movie in Model.PagedData)
+        {
+            <div class="row">
+                <!--1st column -->
+                <div class="col-5 text-center">
+                    <img src="@movie.MoviePosterUrl" class="img-fluid" alt="@movie.MovieTitle" width="200" height="400" />
+                </div>
+
+                <!--2nd column -->
+                <div class="col-7">
+                    <div class="card-body">
+                        <h2 class="card-title">@movie.Rating</h2>
+                        <h3 class="card-title">@movie.ReviewText</h3>
+                    </div>
+                </div>
+
+            </div>
+            <hr />
+        }
+    </div>
+</div>
+
+
+@*Display previous and Next Buttons
+    When we are on first Page, previous button should be disabled
+    When we are on last Page, Next button should be disabled*@
+
+@*we need a button with passing pageNumber*@
+
+@{
+    var previousDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a class="btn btn-primary @previousDisabled" asp-action="Genre" asp-controller="Movies" asp-route-pageNumber="@(Model.PageNumber - 1)">
+    Previous
+</a>
+
+<a class="btn btn-primary @nextDisabled" asp-action="Genre" asp-controller="Movies" asp-route-pageNumber="@(Model.PageNumber + 1)">
+    Next
+</a>
+
+
+
+

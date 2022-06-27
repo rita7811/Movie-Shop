@@ -23,6 +23,8 @@
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Genres\" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Services\" />
+    <None Remove="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
@@ -38,5 +40,7 @@
     <Folder Include="Views\Cast\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Genres\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
 </Project>

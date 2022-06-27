@@ -1,0 +1,146 @@
+﻿
+@using MovieShopMVC.Services
+
+@inject ICurrentLogedInUser currentUser
+
+
+@if (currentUser.IsAuthenticated)
+{
+    // if a user haven't purchased this movie
+
+    <!-- Button trigger modal -->
+    <div class="d-grid">
+        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
+            <i class="far fa-edit" aria-hidden="true"></i> REVIEW
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal2">
+            Buy $ @Model.Price
+        </button>
+    </div>
+
+    <!-- Modal : Purchase -->
+    <div>
+        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+            <div class="modal-dialog bg-white">
+                <div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="Modal1Label">Confirmation Page</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Please click Purchase button to confirm your purchase.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" value="Purchase" class="btn btn-primary" asp-controller="User" asp-action="BuyMovie"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    // if a user has purchased this movie
+
+    <!-- Button trigger modal -->
+    @*<div class="d-grid">
+        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
+            <i class="far fa-edit" aria-hidden="true"></i> REVIEW
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary btn-block" href="#" target="_blank text-dark">
+            Watch Movie
+        </button>
+    </div>*@
+
+}
+else
+{
+    <!-- Button trigger modal -->
+    <div class="d-grid">
+        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
+            <i class="far fa-edit" aria-hidden="true"></i> REVIEW
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal2">
+            Buy $ @Model.Price
+        </button>
+
+    </div>
+
+    <!-- Modal : Review -->
+    <div>
+        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+            <div class="modal-dialog bg-white">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="Modal1Label">Review:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <select class="form-select">
+                                    <option selected> Rate </option>
+                                    <option value="1"> 1 </option>
+                                    <option value="1"> 2 </option>
+                                    <option value="1"> 3 </option>
+                                    <option value="1"> 4 </option>
+                                    <option value="1"> 5 </option>
+                                    <option value="1"> 6 </option>
+                                    <option value="1"> 7 </option>
+                                    <option value="1"> 8 </option>
+                                    <option value="1"> 9 </option>
+                                    <option value="1"> 10 </option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label"> Please enter your review: </label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                        <a class="btn btn-primary" asp-controller="Account" asp-action="Login"> Submit </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal : Purchase -->
+    <div>
+        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+            <div class="modal-dialog bg-white">
+                <div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="Modal1Label">Confirmation Page</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Please click Purchase button to confirm your purchase.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                            <a class="btn btn-primary" asp-controller="Account" asp-action="Login"> Purchase </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+
+
+
+

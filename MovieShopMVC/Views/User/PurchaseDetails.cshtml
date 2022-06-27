@@ -1,0 +1,38 @@
+﻿@model ApplicationCore.Models.UserDetailsModel
+
+<!-- Modal : Purchase Details -->
+<div>
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+        <div class="modal-dialog bg-white">
+            <div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="Modal1Label">Purchase Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-4">
+                            @foreach (var movie in Model.Movies)
+                            {
+                                <img src="@movie.PosterUrl" class="img-fluid" alt="@movie.Title" width="50" height="100" />
+                            }
+                        </div>
+                        <div class="col-8">
+                            <ul class="list-group list-group-flush">
+                                @foreach (var purchase in Model.Purchases)
+                                {
+                                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-calendar"></i> Purchased Date <span class="badge rounded-pill bg-secondary"> @purchase.PurchaseDateTime.ToString("MMM dd, yyyy") </span></li>
+                                    <li class="list-group-item"><i style="font-size: 12px" class="fa fa-money-bill-alt"></i> Price <span class="badge rounded-pill bg-secondary"> @String.Format("{0:C2}", purchase.TotalPrice) </span></li>
+                                    <li class="list-group-item"><span style="font-size: 12px" class="glyphicon glyphicon-check"></span> Purchase Number <span class="badge rounded-pill bg-secondary"> @purchase.PurchaseNumber </span></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

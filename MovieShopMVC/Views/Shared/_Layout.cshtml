@@ -28,6 +28,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
                         @*<li class="nav-link">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="TopRatedMovies">TOP RATED Movies</a>
                         </li>*@
@@ -37,16 +38,16 @@
                             <a class="nav-link text-dark dropdown-toggle" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown">Genres</a>
                             <div class="dropdown-menu">
                                 @*call the Genre view component*@
-                                @await Component.InvokeAsync("Genres") 
+                                @await Component.InvokeAsync("Genres")
                             </div>
                         </li>
 
                     </ul>
 
-                    <div>
-
-                    </div>
-
+                    @*Login and Register buttons*@
+                    @*create partial view*@
+                    <partial name="_LoginInfo" />
+                       
                 </div>
             </div>
         </nav>

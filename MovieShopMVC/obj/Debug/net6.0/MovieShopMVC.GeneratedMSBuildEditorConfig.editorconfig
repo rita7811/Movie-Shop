@@ -43,6 +43,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/Movies/PagedMovies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL1BhZ2VkTW92aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/Shared/Components/Genres/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvR2VucmVzL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -51,16 +55,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/Shared/_CastCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19DYXN0Q2FyZC5jc2h0bWw=
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/Shared/_LoginInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpbkluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/Shared/_MovieCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Nb3ZpZUNhcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/Shared/_Purchase.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19QdXJjaGFzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/User/PagedFavorites.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9QYWdlZEZhdm9yaXRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/User/PagedPurchases.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9QYWdlZFB1cmNoYXNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/User/PagedReviews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9QYWdlZFJldmlld3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/User/PurchaseDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9QdXJjaGFzZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/_ViewImports.cshtml]
