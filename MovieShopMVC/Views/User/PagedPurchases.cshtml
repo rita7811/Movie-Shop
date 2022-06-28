@@ -7,12 +7,15 @@
                 @foreach (var movie in Model.PagedData)
                 {
                     <div class="col-6 col-lg-3 col-sm-4 col-xl-2">
+
+                        <partial name="_MovieCard" model="movie" />
+
                         <!-- Button trigger modal -->
-                        <div class="d-grid">
+                        <!--<div class="d-grid">
                             <button type="button" class="card mb-4 shadow" data-bs-toggle="modal" data-bs-target="#modal3">
                                 <img src="@movie.PosterUrl" class="img-fluid" alt="@movie.Title" />
                             </button>
-                        </div>
+                        </div>-->
                     </div>
                 }
 

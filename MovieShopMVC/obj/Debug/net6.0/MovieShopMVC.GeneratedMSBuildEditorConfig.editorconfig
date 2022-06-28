@@ -87,6 +87,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9QdXJjaGFzZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/User/_PurchaseMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9fUHVyY2hhc2VNb3ZpZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

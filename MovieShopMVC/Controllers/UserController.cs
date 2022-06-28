@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Claims;
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -51,14 +52,14 @@ namespace MovieShopMVC.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> BuyMovie(PurchaseRequestModel model)
+        public async Task<IActionResult> PurchaseMovie(PurchaseRequestModel model)
         {
             var userId = _currentLogedInUser.UserId;
 
             // call RegisterUser() method:
-            var user = await _userService.PurchaseMovie(model, userId);
+            var purchase = await _userService.PurchaseMovie(model, userId);
 
-            // redirect to Login page
+            // redirect to Purchases page
             return RedirectToAction("Purchases");
         }
 
@@ -80,6 +81,8 @@ namespace MovieShopMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> AddFavorite()
         {
+            var userId = _currentLogedInUser.UserId;
+
             return View();
         }
 
@@ -87,6 +90,8 @@ namespace MovieShopMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> RemoveFavorite()
         {
+            var userId = _currentLogedInUser.UserId;
+
             return View();
         }
 
@@ -108,6 +113,8 @@ namespace MovieShopMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateReview()
         {
+            var userId = _currentLogedInUser.UserId;
+
             return View();
         }
 
@@ -115,6 +122,8 @@ namespace MovieShopMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteReview()
         {
+            var userId = _currentLogedInUser.UserId;
+
             return View();
         }
 
@@ -124,8 +133,6 @@ namespace MovieShopMVC.Controllers
         public async Task<IActionResult> Profile()
         {
             var userId = _currentLogedInUser.UserId;
-
-            //var user = await _userService.
 
             return View();
         }

@@ -40,6 +40,7 @@ namespace ApplicationCore.Models
         public List<TrailerModel> Trailers { get; set; }
         public List<ReviewModel> Reviews { get; set; }
         //public List<PurchaseModel> Purchases { get; set; }
+        public List<PurchaseRequestModel> PurchaseRequests { get; set; }
     }
 }
 

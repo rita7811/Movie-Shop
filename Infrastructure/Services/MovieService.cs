@@ -11,10 +11,13 @@ namespace Infrastructure.Services
 		// to call the repository methods (through Dependency Injection)
 		private readonly IMovieRepository _movieRepository;
 
+        private readonly IReviewRepository _reviewRepository;
+
 		// generate constructor
-        public MovieService(IMovieRepository movieRepository)
+        public MovieService(IMovieRepository movieRepository, IReviewRepository reviewRepository)
         {
             _movieRepository = movieRepository;
+            _reviewRepository = reviewRepository;
         }
 
 
@@ -24,7 +27,10 @@ namespace Infrastructure.Services
             // to call Repository
             var movieDetails = await _movieRepository.GetById(id);
             //var movieDetails = _movieRepository.GetById(id);
-
+			if (movieDetails == null)
+            {
+				return null;
+            }
 			// return model
 			var movie = new MovieDetailsModel
 			{
@@ -98,6 +104,22 @@ namespace Infrastructure.Services
 
 
 
+        public async Task<PagedResultSetModel<ReviewModel>> GetReviewsOfMovie(int id, int pageSize = 30, int pageNumber = 1)
+        {
+            var reviews = await _reviewRepository.GetReviewsOfMovie(id);
+
+            var reviewCards = new List<ReviewModel>();
+
+            foreach (var review in reviews.PagedData)
+            {
+                reviewCards.Add(new ReviewModel { MovieId = review.MovieId, UserId = review.UserId, Rating = review.Rating, ReviewText = review.ReviewText });
+            }
+            return new PagedResultSetModel<ReviewModel>(pageNumber, reviews.TotalRecoeds, pageSize, reviewCards);
+        }
+
+
+
+
 
         // Create method that return top movies to the caller
         // return list of movies (model)  b/c we create models based on the views
@@ -132,6 +154,21 @@ namespace Infrastructure.Services
 			//return movies;
         }
 
-	}
+        public async Task<List<MovieCardModel>> GetTopRatedMovies()
+        {
+            var movies = await _movieRepository.Get30HighestRatedMovies();
+
+            var movieCards = new List<MovieCardModel>();
+
+            foreach (var movie in movies)
+            {
+                movieCards.Add(new MovieCardModel { Id = movie.Id, PosterUrl = movie.PosterUrl, Title = movie.Title });
+            }
+
+            return movieCards;
+        }
+
+
+    }
 }
 

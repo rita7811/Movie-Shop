@@ -11,6 +11,8 @@ namespace ApplicationCore.Contracts.Services
         // Validating method (return type was bool)
         Task<UserModel> ValidateUser(string email, string password);
 
+        Task<bool> CheckEmail(string email);
+
     }
 }
 

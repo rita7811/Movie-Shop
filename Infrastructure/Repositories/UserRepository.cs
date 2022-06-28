@@ -40,20 +40,7 @@ namespace Infrastructure.Repositories
             return userDetails;
         }
 
-        public Task<PagedResultSetModel<Purchase>> GetAllPurchasesForUser(int userId, int pageSize = 20, int pageNumber = 1)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<PagedResultSetModel<Favorite>> GetAllFavoritesForUser(int id, int pageSize = 20, int pageNumber = 1)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<PagedResultSetModel<Review>> GetAllReviewsByUser(int id, int pageSize = 20, int pageNumber = 1)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

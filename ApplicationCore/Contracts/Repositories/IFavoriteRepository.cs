@@ -7,7 +7,10 @@ namespace ApplicationCore.Contracts.Repositories
 {
 	public interface IFavoriteRepository : IRepository<Favorite>
 	{
-        Task<PagedResultSetModel<Favorite>> GetAllFavoritesForUser(int userId, int pageSize = 20, int pageNumber = 1);
+        Task<PagedResultSetModel<Favorite>> GetAllFavoritesForUser(int id, int pageSize = 20, int pageNumber = 1);
+
+        
+
     }
 }
 

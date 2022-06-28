@@ -96,6 +96,20 @@ namespace Infrastructure.Services
 
 
 
+        public async Task<bool> CheckEmail(string email)
+        {
+            var user = await _userRepository.GetUserByEmail(email);
+
+            if (user == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
+
         // create private methods for a random salt: (for both registration and login)
         // using code from official documentation (never never create by ourself)
 
@@ -126,7 +140,6 @@ namespace Infrastructure.Services
                 256 / 8)); //numBytesRequested
             return hashed;
         }
-
     }
 }
 

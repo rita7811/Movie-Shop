@@ -1,4 +1,5 @@
-﻿
+﻿@model ApplicationCore.Models.MovieDetailsModel
+
 @using MovieShopMVC.Services
 
 @inject ICurrentLogedInUser currentUser
@@ -10,36 +11,42 @@
 
     <!-- Button trigger modal -->
     <div class="d-grid">
+
         <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
             <i class="far fa-edit" aria-hidden="true"></i> REVIEW
         </button>
 
-        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal2">
+        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal2" href="/User/PurchaseMovie">
             Buy $ @Model.Price
         </button>
     </div>
 
     <!-- Modal : Purchase -->
     <div>
-        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
-            <div class="modal-dialog bg-white">
-                <div>
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="Modal1Label">Confirmation Page</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Please click Purchase button to confirm your purchase.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" value="Purchase" class="btn btn-primary" asp-controller="User" asp-action="BuyMovie"/>
-                        </div>
+        <form asp-controller="User" asp-action="PurchaseMovie">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+                <div class="modal-dialog bg-white">
+                    <div>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal1Label">Confirmation Page</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <partial name="_PurchaseMovie" />
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="submit" class="btn btn-primary" value="Purchase" data-save="modal" />
+
+                            </div>
+                            </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
 
@@ -48,14 +55,14 @@
 
     <!-- Button trigger modal -->
     @*<div class="d-grid">
-        <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
-            <i class="far fa-edit" aria-hidden="true"></i> REVIEW
-        </button>
+            <button type="button" class="btn btn-outline-secondary btn-block" data-bs-toggle="modal" data-bs-target="#modal1">
+                <i class="far fa-edit" aria-hidden="true"></i> REVIEW
+            </button>
 
-        <button type="button" class="btn btn-outline-secondary btn-block" href="#" target="_blank text-dark">
-            Watch Movie
-        </button>
-    </div>*@
+            <button type="button" class="btn btn-outline-secondary btn-block" href="#" target="_blank text-dark">
+                Watch Movie
+            </button>
+        </div>*@
 
 }
 else

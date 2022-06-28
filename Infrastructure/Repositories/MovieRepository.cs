@@ -33,9 +33,13 @@ namespace Infrastructure.Repositories
             //return movies;
         }
 
-        public Task<IEnumerable<Movie>> Get30HighestRatedMovies()
+        public async Task<IEnumerable<Movie>> Get30HighestRatedMovies()
         {
-            throw new NotImplementedException();
+            var movies = await _dbContext
+                .Reviews.Include(t => t.Movie)
+                .OrderByDescending(m => m.Rating).Select(m => new Movie { Id = m.MovieId, Title = m.Movie.Title, PosterUrl = m.Movie.PosterUrl })
+                .Take(30).ToListAsync();
+            return movies;
         }
 
 
@@ -87,7 +91,7 @@ namespace Infrastructure.Repositories
             return pagedMovies;
         }
 
-
+        
     }
 }
 
