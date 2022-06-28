@@ -30,7 +30,7 @@ namespace MovieShopAPI.Controllers
 
 
 
-        [HttpGet]
+        [HttpPut]
         [Route("movie")]
         public async Task<IActionResult> UpdateMovie([FromBody] MovieRequestModel model)
         {
