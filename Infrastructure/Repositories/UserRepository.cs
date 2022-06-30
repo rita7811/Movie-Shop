@@ -22,12 +22,18 @@ namespace Infrastructure.Repositories
 
         // Implement interface:
 
-        public async Task<User> GetUserByEmail(string email)
+        public async Task<User> GetUserByEmail(string email)  //CheckEmailExists
         {
             // if email exits, it gonna send me user object; if email doesn't exit, it will return me a null value
             var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
             return user;
         }
+
+        // pseudocode:
+        //public async Task<bool> CheckEmailExists(string email)
+        //{
+        //    return await _dbContext.Users.AnyAsync(u => u.Email == email);
+        //}
 
 
         public async Task<User> GetById(int id)

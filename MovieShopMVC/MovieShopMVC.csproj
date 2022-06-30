@@ -25,6 +25,8 @@
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Services\" />
     <None Remove="Views\User\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Middlewares\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
@@ -34,6 +36,7 @@
     </PackageReference>
     <PackageReference Include="Docker.DotNet" Version="3.125.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Movies\" />
@@ -42,5 +45,6 @@
     <Folder Include="Views\Shared\Components\Genres\" />
     <Folder Include="Services\" />
     <Folder Include="Views\User\" />
+    <Folder Include="Middlewares\" />
   </ItemGroup>
 </Project>

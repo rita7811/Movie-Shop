@@ -1,46 +1,41 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{140CB499-F30E-444F-AA19-B866D23EC37D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopAPI/Controllers/UserController.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{FCD0A2B1-8173-4E0D-848E-3572F519544C}|Default">
+  <MonoDevelop.Ide.ItemProperties.MovieShopAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="32" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="35" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="45" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="36" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="39" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="46" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="48" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="48" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="57" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="46" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="69" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="72" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="78" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="80" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="92" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="62" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="64" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopAPI/Controllers/MoviesController.cs" relfile="MovieShopAPI/Controllers/MoviesController.cs" line="72" column="1" />
+      <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/Middlewares/MovieShopExceptionMiddleware.cs" relfile="MovieShopMVC/Middlewares/MovieShopExceptionMiddleware.cs" line="25" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Services/AccountService.cs">
     <Files>
-      <File FileName="MovieShopAPI/Controllers/AdminController.cs" Line="16" Column="1" />
-      <File FileName="MovieShopAPI/Controllers/UserController.cs" Line="44" Column="10" />
-      <File FileName="MovieShopAPI/Controllers/MoviesController.cs" Line="43" Column="84" />
-      <File FileName="MovieShopAPI/Controllers/AccountController.cs" Line="83" Column="1" />
+      <File FileName="Infrastructure/Repositories/UserRepository.cs" Line="32" Column="23" />
+      <File FileName="Infrastructure/Services/AccountService.cs" Line="102" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MovieShop" expanded="True">
             <Node name="Solution Items" expanded="True" />
-            <Node name="ApplicationCore" expanded="True">
-              <Node name="Contracts" expanded="True">
-                <Node name="Repositories" expanded="True" />
-                <Node name="Services" expanded="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="Infrastructure" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True" />
-            </Node>
-            <Node name="MovieShopAPI" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Properties" expanded="True" />
-            </Node>
-            <Node name="MovieShopMVC" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="Cast" expanded="True" />
-                <Node name="Movies" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="Components" expanded="True">
-                    <Node name="Genres" expanded="True" />
-                  </Node>
-                </Node>
-                <Node name="User" expanded="True" />
-              </Node>
-            </Node>
           </Node>
         </State>
       </Pad>
@@ -50,27 +45,4 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="32" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="35" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="45" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="36" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="39" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="46" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="48" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="48" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="57" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="46" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="69" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="72" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="78" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="80" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Services/UserService.cs" relfile="Infrastructure/Services/UserService.cs" line="92" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="62" column="1" />
-    <Breakpoint file="/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/Infrastructure/Repositories/PurchaseRepository.cs" relfile="Infrastructure/Repositories/PurchaseRepository.cs" line="64" column="1" />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.MovieShopAPI PreferredExecutionTarget="/Applications/Safari.app" />
 </Properties>

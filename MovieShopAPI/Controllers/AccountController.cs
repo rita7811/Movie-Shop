@@ -5,10 +5,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Models;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace MovieShopAPI.Controllers
 {
@@ -18,9 +19,12 @@ namespace MovieShopAPI.Controllers
     {
         private readonly IAccountService _accountService;
 
-        public AccountController(IAccountService accountService)
+        private readonly IConfiguration _configuration;
+
+        public AccountController(IAccountService accountService, IConfiguration configuration)
         {
             _accountService = accountService;
+            _configuration = configuration;
         }
 
 
@@ -53,33 +57,78 @@ namespace MovieShopAPI.Controllers
         public async Task<IActionResult> Login([FromBody] UserLoginModel model)
         {
             var user = await _accountService.ValidateUser(model.Email, model.Password);
+
             if (user != null)
             {
-                var claims = new List<Claim>  // Claim already in our ASP.NET
-                {
-                    // these information will be stored inside the cookie
-
-                    new Claim(ClaimTypes.Email, model.Email),
-                    new Claim(ClaimTypes.Surname, user.LastName),
-                    new Claim(ClaimTypes.GivenName, user.FirstName),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(ClaimTypes.DateOfBirth, user.DateOfBirth.ToShortDateString()),
-                    new Claim(ClaimTypes.Country, "USA"),
-
-                    new Claim("Language", "English"), //(key, value)
-                };
-
-                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity)); //sign In
-
-                // 200
-                return Ok(user);
+                // create Jwt token
+                var jetToken = CreateJwtToken(user);
+                // once we have CreateJwtToken(user), we need to return this object
+                return Ok(new { token = jetToken });
             }
-            // 404
-            return NotFound(new { errorMessage = "No Found User Account" });
+
+            // Who calls this API with userName and password: IOS, Android, Angular, React, Java
+            // We careated "token, **JWT (Json Web Token) https://jwt.io " instand of creating Cookie
+
+            // Client will send email/password to API, POST
+            // API will validate the email/password and if valid then API will create the JWT token and send to client
+            // Its Client's reponsibility to store the token some where
+            // Angular, React (store in localstorage or sessionstorage in brower)
+            // IOS/Android, device (store in some where in device)
+
+            // Once we have token:
+            // When Client needs some secure information or needs to perform any operation that requires users to be authenticated
+            // **Then client needs to send the token to the API in the Http Header
+
+            // Once the API recieves the token from client,
+            // it will validate the JWT token and if vlaid it will send the data back to the client
+            // IF JWT token is invalid or token is expired, then API will send 401 Unauthorized
+
+            throw new UnauthorizedAccessException("Please check email and password");
+            //return Unauthorized(new { errorMessage = "Please check email and password" });
         }
 
+        // Creating Jwt Token : we call this creation of token only when the user is validated
+        private string CreateJwtToken(UserModel user)
+        {
+            // Create token (need packages: System.IdentityModel.Tokens.Jwt & Microsoft.IdentityModel.Tokens)
 
+            // 1. create the claims and identity object:
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
+                new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+                new Claim("Country", "USA"),
+                new Claim("language", "english")
+            };
+
+            var identityClaims = new ClaimsIdentity();
+            identityClaims.AddClaims(claims);
+
+            // 2. specify a secret key:
+            var secreKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["secretKey"]));
+                                                                        //read info in appsettings.json throigh inject Configuration
+
+            // 3. specify the algorithm:
+            var credentials = new SigningCredentials(secreKey, SecurityAlgorithms.HmacSha256);
+
+            // 4. specify the expiration of the token:
+            var tokenExpiration = DateTime.UtcNow.AddHours(2);
+
+            // 5. create a object with all the above information to create the token:
+            var tokenDetails = new SecurityTokenDescriptor
+            {
+                Subject = identityClaims,
+                Expires = tokenExpiration,
+                SigningCredentials = credentials,
+                Issuer = "MovieShop, Inc",
+                Audience = "MovieShop Clients"
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var encodedJwt = tokenHandler.CreateToken(tokenDetails);
+            return tokenHandler.WriteToken(encodedJwt);
+        }
     }
 }

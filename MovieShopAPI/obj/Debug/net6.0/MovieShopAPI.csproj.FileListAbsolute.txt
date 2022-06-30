@@ -274,3 +274,5 @@
 /Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopAPI/obj/Debug/net6.0/MovieShopAPI.pdb
 /Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopAPI/obj/Debug/net6.0/MovieShopAPI.genruntimeconfig.cache
 /Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopAPI/obj/Debug/net6.0/ref/MovieShopAPI.dll
+/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -361,3 +361,4 @@
 /Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/obj/Debug/net6.0/MovieShopMVC.pdb
 /Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/obj/Debug/net6.0/MovieShopMVC.genruntimeconfig.cache
 /Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/obj/Debug/net6.0/ref/MovieShopMVC.dll
+/Users/rita/Doc-Local/GitHub/Antra_Assignments/Web Applications/Movie-Shop/MovieShopMVC/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

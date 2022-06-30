@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,7 @@ namespace MovieShopAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
@@ -93,17 +95,27 @@ namespace MovieShopAPI.Controllers
             return Ok(reviewDelete);
         }
 
+        //[HttpGet]
+        //[Route("purchases")]
+        //public async Task<IActionResult> Purchases(int userId)
+        //{
+        //    var purchases = await _userService.GetAllPurchasesForUser(userId);
+        //    if (purchases == null)
+        //    {
+        //        return NotFound(new { errorMessage = $"No Found Any Purchase Records" });
+        //    }
+        //    return Ok(purchases);
+        //}
+
         [HttpGet]
         [Route("purchases")]
-        public async Task<IActionResult> Purchases(int userId)
+        public async Task<IActionResult> GetMoviesPurchasedByUser(int userId)
         {
-            var purchases = await _userService.GetAllPurchasesForUser(userId);
-            if (purchases == null)
-            {
-                return NotFound(new { errorMessage = $"No Found Any Purchase Records" });
-            }
-            return Ok(purchases);
+            // we need to get the userId from the token, using HttpContext -> Program.cs
+            return Ok();
         }
+
+
 
         [HttpGet]
         [Route("purchase-details/{movieId:int}")]

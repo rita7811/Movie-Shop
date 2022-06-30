@@ -1,11 +1,15 @@
-﻿using ApplicationCore.Contracts.Repositories;
+﻿using System.Text;
+using ApplicationCore.Contracts.Repositories;
 using ApplicationCore.Contracts.Repository;
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Entities;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using MovieShopAPI.Middlewares;
 using MovieShopMVC.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -45,17 +49,40 @@ builder.Services.AddDbContext<MovieShopDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MovieShopDbConnection"));
 });
 
+
+// API is gonna use JWT authentication, so that it can look at the incoming request and look for Token
+// and if valid it will get the claims into HttpContext
+// to actually check incoming Token using secret Key
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)   // install package "Microsoft.AspNetCore.Authentication.JwtBearer"
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false,
+            ValidateIssuer = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["secretKey"]))
+        };
+    });
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+// **MiddleWare
+// When you get a http request from client/brower
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseMiddlewareClassTemplate();  // call Extension method inside MovieShopExceptionMiddleware.cs
 app.UseHttpsRedirection();
 
+// make sure you add Authentication Middleware
+// use for our Filter [Authorize]
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

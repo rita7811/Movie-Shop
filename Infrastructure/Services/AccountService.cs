@@ -96,7 +96,7 @@ namespace Infrastructure.Services
 
 
 
-        public async Task<bool> CheckEmail(string email)
+        public async Task<bool> CheckEmail(string email)  //CheckEmailExists
         {
             var user = await _userRepository.GetUserByEmail(email);
 
