@@ -22,17 +22,17 @@ namespace MovieShopAPI.Controllers
 
         [HttpGet]
         [Route("{{id:int}}")]
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> getCastDetails(int id)
         {
-            var movie = await _castService.GetCastDetails(id);
+            var cast = await _castService.GetCastDetails(id);
 
-            if (movie == null) 
+            if (cast == null) 
             {
                 // 404
                 return NotFound(new { errorMessage = "No Movies Found" });
             }
             // 200
-            return Ok(movie);
+            return Ok(cast);
         }
 
     }

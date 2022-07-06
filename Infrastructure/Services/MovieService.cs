@@ -98,7 +98,7 @@ namespace Infrastructure.Services
             {
 				movieCards.Add(new MovieCardModel { Id = movie.Id, PosterUrl = movie.PosterUrl, Title = movie.Title });
             }
-			return new PagedResultSetModel<MovieCardModel>(pageNumber, movies.TotalRecoeds, pageSize, movieCards);
+			return new PagedResultSetModel<MovieCardModel>(pageNumber, movies.TotalRecords, pageSize, movieCards);
         }
 
 
@@ -114,7 +114,7 @@ namespace Infrastructure.Services
             {
                 reviewCards.Add(new ReviewModel { MovieId = review.MovieId, UserId = review.UserId, Rating = review.Rating, ReviewText = review.ReviewText });
             }
-            return new PagedResultSetModel<ReviewModel>(pageNumber, reviews.TotalRecoeds, pageSize, reviewCards);
+            return new PagedResultSetModel<ReviewModel>(pageNumber, reviews.TotalRecords, pageSize, reviewCards);
         }
 
 

@@ -78,7 +78,7 @@ namespace Infrastructure.Services
                 {
                     moviePurchasedDateCard.Add(new MoviePurchasedDateCardModel { MovieId = movie.MovieId , PurchaseDate = movie.PurchaseDateTime, Title = movie.Movie.Title });
                 }
-                return new MoviePurchasedDetailsModel<MoviePurchasedDateCardModel>(dateTime, moviePurchasedDetails.TotalRecoeds, moviePurchasedDateCard);
+                return new MoviePurchasedDetailsModel<MoviePurchasedDateCardModel>(dateTime, moviePurchasedDetails.TotalRecords, moviePurchasedDateCard);
             }
         }
 

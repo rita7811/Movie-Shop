@@ -7,14 +7,14 @@ namespace ApplicationCore.Models
         public PagedResultSetModel(int pageNumber, int totalRecords, int pageSize, IEnumerable<T> pagedData)
         {
             PageNumber = pageNumber;
-            TotalRecoeds = totalRecords;
+            TotalRecords = totalRecords;
             TotalPages = (int) Math.Ceiling(totalRecords/ (double) pageSize);
             PagedData = pagedData;
         }
 
         // properties
         public int PageNumber { get; }
-        public int TotalRecoeds { get; }
+        public int TotalRecords { get; }
         public int TotalPages { get; }
         public int PageSize { get; }
 

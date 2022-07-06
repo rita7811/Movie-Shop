@@ -105,7 +105,7 @@ namespace Infrastructure.Services
             {
                 movieCards.Add(new MovieCardModel { Id = purchase.Movie.Id, PosterUrl = purchase.Movie.PosterUrl, Title = purchase.Movie.Title });
             }
-            return new PagedResultSetModel<MovieCardModel>(pageNumber, purchases.TotalRecoeds, pageSize, movieCards);
+            return new PagedResultSetModel<MovieCardModel>(pageNumber, purchases.TotalRecords, pageSize, movieCards);
         }
 
 
@@ -148,7 +148,7 @@ namespace Infrastructure.Services
             {
                 movieCards.Add(new MovieCardModel { Id = favorite.Movie.Id, PosterUrl = favorite.Movie.PosterUrl, Title = favorite.Movie.Title });
             }
-            return new PagedResultSetModel<MovieCardModel>(pageNumber, favorites.TotalRecoeds, pageSize, movieCards);
+            return new PagedResultSetModel<MovieCardModel>(pageNumber, favorites.TotalRecords, pageSize, movieCards);
         }
 
         public async Task<bool> AddFavorite(FavoriteRequestModel favoriteRequest)
@@ -235,7 +235,7 @@ namespace Infrastructure.Services
             {
                 reviewCards.Add(new ReviewCardModel { UserId = review.UserId, MovieId = review.MovieId, Rating = review.Rating, ReviewText = review.ReviewText, MovieTitle = review.Movie.Title, MoviePosterUrl = review.Movie.PosterUrl });
             }
-            return new PagedResultSetModel<ReviewCardModel>(pageNumber, reviews.TotalRecoeds, pageSize, reviewCards);
+            return new PagedResultSetModel<ReviewCardModel>(pageNumber, reviews.TotalRecords, pageSize, reviewCards);
         }
 
 

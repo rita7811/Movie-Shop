@@ -28,6 +28,7 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<ICastRepository, CastRepository>();
 builder.Services.AddScoped<ICastService, CastService>();
 builder.Services.AddScoped<IRepository<Genre>, Repository<Genre>>();
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountService, AccountService>();
@@ -79,6 +80,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddlewareClassTemplate();  // call Extension method inside MovieShopExceptionMiddleware.cs
 app.UseHttpsRedirection();
+
+// For Angular
+app.UseCors(policy =>
+{
+    policy.WithOrigins(builder.Configuration["AngularURL"]).AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+});
 
 // make sure you add Authentication Middleware
 // use for our Filter [Authorize]

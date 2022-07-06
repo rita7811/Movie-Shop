@@ -198,7 +198,7 @@
           "dependencies": {
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.20.0, )"
+              "version": "[6.21.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -210,7 +210,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.20.0, )"
+              "version": "[6.21.0, )"
             }
           },
           "imports": [

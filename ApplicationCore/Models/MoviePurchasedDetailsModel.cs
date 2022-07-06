@@ -7,13 +7,13 @@ namespace ApplicationCore.Models
         public MoviePurchasedDetailsModel(DateTime purchaseDate, int totalRecords, IEnumerable<T> pagedData)
         {
             PurchaseDate = purchaseDate;
-            TotalRecoeds = totalRecords;
+            TotalRecords = totalRecords;
             PagedData = pagedData;
         }
 
         public DateTime PurchaseDate { get; set; }
 
-        public int TotalRecoeds { get; }
+        public int TotalRecords { get; }
 
         public IEnumerable<T> PagedData { get; set; }
 
