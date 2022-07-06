@@ -55,7 +55,7 @@ namespace MovieShopAPI.Controllers
 
 
         [HttpDelete]
-        [Route("deltet/id:int")]
+        [Route("delete/id:int")]
         public async Task<IActionResult> DeleteGenre(int id)
         {
             var deletedGenre = await _genresService.DeleteGenre(id);
